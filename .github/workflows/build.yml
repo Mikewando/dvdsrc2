@@ -92,6 +92,16 @@ jobs:
           mingw-w64-ucrt-x86_64-cmake
           git
 
+    - name: Install libdvdcss
+      run: |
+        git clone https://code.videolan.org/videolan/libdvdcss.git
+        pushd libdvdcss/
+        meson setup build -Dprefix=/ucrt64
+        meson compile -C build
+        meson install -C build
+        popd
+        rm -rf libdvdcss
+
     - name: Install a52dec
       run: |
         git clone https://github.com/jsaowji/a52dec.git --depth 1
