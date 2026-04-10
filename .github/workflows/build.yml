@@ -98,7 +98,7 @@ jobs:
         pushd a52dec/
         autoreconf -fiv
         ./configure \
-              CFLAGS="-D__CRT__NO_INLINE=1" \
+              CFLAGS="-D__CRT__NO_INLINE=1 -std=gnu17" \
               --prefix=/ucrt64 \
               --sysconfdir=/etc \
               --localstatedir=/var \
