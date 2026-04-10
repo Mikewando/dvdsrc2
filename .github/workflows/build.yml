@@ -113,7 +113,7 @@ jobs:
       run: |
         git clone https://github.com/jsaowji/libdvdread.git --branch master --depth 1
         pushd libdvdread/
-        meson build -D libdvdcss=disabled -Dprefix=/ucrt64
+        meson build -D libdvdcss=enabled -Dprefix=/ucrt64
         meson compile -C build
         meson install -C build
         popd
